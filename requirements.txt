@@ -1,5 +1,3 @@
-torch
-torchvision
 matplotlib
 numpy
 opencv-python # cv2
@@ -13,3 +11,4 @@ scikit-image # skimage
 scipy
 onnxruntime
 gradio
+jupyter
