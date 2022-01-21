@@ -1,0 +1,3 @@
+CUDA_VISIBLE_DEVICES=1 python demo.py -f examples/inputs/G11_tiger_ver1.png -o obj --show_flag=false --onnx;
+
+meshlab
