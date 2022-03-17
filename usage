@@ -1,3 +1,31 @@
 CUDA_VISIBLE_DEVICES=1 python demo.py -f examples/inputs/G11_tiger_ver1.png -o obj --show_flag=false --onnx;
 
+---
+
 meshlab
+
+---
+
+
+CUDA_VISIBLE_DEVICES=1 python demo.py \
+    -f 220226/inputs/ex3.jpg \
+    -r 220226/results \
+    -o obj --show_flag=false --onnx;
+
+
+CUDA_VISIBLE_DEVICES=1 python demo.py \
+    -f 220226/inputs/ex3.jpg \
+    -r 220226/results \
+    -o uv_tex --show_flag=false --onnx;
+
+
+CUDA_VISIBLE_DEVICES=1 python demo.py \
+    -f 220226/inputs/ex3.jpg \
+    -r 220226/results \
+    -o 3d --show_flag=false --onnx;
+
+
+CUDA_VISIBLE_DEVICES=1 python demo.py \
+    -f 220226/inputs/ex3.jpg \
+    -r 220226/results \
+    -o ply --show_flag=false --onnx;
