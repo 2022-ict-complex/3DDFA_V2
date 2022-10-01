@@ -1,0 +1,16 @@
+conda create -n 3d_dfa_v2 -c nvidia python=3.8 cudatoolkit=11.3
+conda activate 3d_dfa_v2;
+conda install -c nvidia cudnn=8.2
+
+conda update -n base -c defaults conda
+pip install --upgrade pip
+
+conda install -c bottler nvidiacub
+
+pip install fvcore iopath
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio===0.11.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu113_pyt1110/download.html
+pip install plotly cython trimesh
+pip install -r requirements.txt;
+
+source ./build.sh;
