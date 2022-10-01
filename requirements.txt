@@ -12,3 +12,4 @@ scipy
 onnxruntime
 gradio
 jupyter
+insightface

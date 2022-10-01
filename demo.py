@@ -42,6 +42,9 @@ def main(args):
     # Given a still image path and load to BGR channel
     img = cv2.imread(args.img_fp)
 
+    # # # Remove this
+    # img = cv2.resize(img, (512,512))
+
     # Detect faces, get 3DMM params and roi boxes
     boxes = face_boxes(img)
     n = len(boxes)
@@ -57,7 +60,8 @@ def main(args):
     old_suffix = get_suffix(args.img_fp)
     new_suffix = f'.{args.opt}' if args.opt in ('ply', 'obj') else '.jpg'
 
-    wfp = f'examples/results/{args.img_fp.split("/")[-1].replace(old_suffix, "")}_{args.opt}' + new_suffix
+    os.makedirs(args.result_path, exist_ok=True)
+    wfp = f'{args.result_path}/{args.img_fp.split("/")[-1].replace(old_suffix, "")}_{args.opt}' + new_suffix
     # wfp = f'{args.img_fp}/{args.img_fp.split("/")[-1].replace(old_suffix, "")}_{args.opt}' + new_suffix
 
     ver_lst = tddfa.recon_vers(param_lst, roi_box_lst, dense_flag=dense_flag)
